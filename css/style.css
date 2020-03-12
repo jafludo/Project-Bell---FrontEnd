@@ -1,0 +1,29 @@
+.centertext{
+    text-align: center;
+    align-content: center;
+}
+.espace{
+
+    padding-bottom: 10px;
+
+}
+.notation{
+    
+    width: 20%;
+    
+}
+
+.left{
+    float: left;
+}
+.right{
+    float: right;
+}
+
+.cote{
+    display: inline;
+}
+
+#p{
+    cursor: pointer;
+}
