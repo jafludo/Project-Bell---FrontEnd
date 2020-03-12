@@ -23,6 +23,7 @@
 .cote{
     display: inline;
 }
-.divson{
-    
+
+#p{
+    cursor: pointer;
 }

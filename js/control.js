@@ -8,10 +8,17 @@ $(document).ready(function() {
         
     });
 
-    $("#button-addon1").click(function(){
+    /*
+    $("#pouce").click(function(){
         recup++;
         $("#button-addon1").val(recup);
     });
+*/
+     $("#p").click(function(){
+         console.log($("#button-addon1").val());
+        recup++;
+        $("#button-addon1").text(recup);
+    });    
 
 
 });
