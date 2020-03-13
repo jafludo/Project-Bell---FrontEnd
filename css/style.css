@@ -8,7 +8,6 @@
 
 }
 .notation{
-    //border: 1px solid black;
     width: 20%;
     
 }
@@ -22,8 +21,4 @@
 
 .cote{
     display: inline;
-}
-
-#p{
-    cursor: pointer;
 }
