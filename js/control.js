@@ -10,9 +10,6 @@ $(document).ready(function() {
 
     $("#submit").click(function(){
 
-
-      
-
         //Add Div Generale
         $('<div/>', {
             id: divid,
@@ -45,17 +42,25 @@ $(document).ready(function() {
             text: "👍"
         }).appendTo("#"+divnotation);
        
-        
+        console.log("val : "+pvalvote);
         //Evenement de detection de click sur poucevalvote
         $("#"+poucevalvote).click(function(){
 
+            console.log(this.id);
+            console.log($("#"+pvalvote));
+
             //MAJ val poucevalvote
-            $("#"+pvalvote).text(init++);
+            var parent = $(this).parent();
+            parent.children("#"+pvalvote);
+            //var pval = $("#"+pvalvote);
+            //parent.find(pval);
+
+            //parent.text(init++);
+            
+            //$(".init").text(init++);
 
         });   
-
-        
-
+        console.log("val 2 : "+pvalvote);
         //Initialisation vote a 0
         $("#"+pvalvote).text(0);
 
@@ -70,10 +75,5 @@ $(document).ready(function() {
     
     });
 });
-
-
-class Request{
-
-}
 
 
