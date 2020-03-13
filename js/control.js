@@ -1,6 +1,9 @@
+
+
 //Chargement de la fonction quand la page est chargée
 $(document).ready(function() {
 
+    var test = new CRequest();
     var init = 0;
     var divinteger = 0;
     var divid = "div0";
@@ -9,6 +12,9 @@ $(document).ready(function() {
     var poucevalvote = "poucevalvote0";
 
     $("#submit").click(function(){
+
+        test.getPost();
+
 
         //Add Div Generale
         $('<div/>', {
@@ -60,6 +66,7 @@ $(document).ready(function() {
             //$(".init").text(init++);
 
         });   
+
         console.log("val 2 : "+pvalvote);
         //Initialisation vote a 0
         $("#"+pvalvote).text(0);
