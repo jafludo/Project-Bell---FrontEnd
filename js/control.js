@@ -1,5 +1,3 @@
-
-
 //Chargement de la fonction quand la page est chargée
 $(document).ready(function() {
 
@@ -82,5 +80,6 @@ $(document).ready(function() {
     
     });
 });
+
 
 
