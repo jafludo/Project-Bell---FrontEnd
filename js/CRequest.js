@@ -3,17 +3,18 @@ class CRequest{
 
     getPost(){
         var settings = {
-          "url": "https://quickpay-api.herokuapp.com/",   
-          "method": "GET"   
+          "url": "https://quickpay-api.herokuapp.com/api/v1/customers/",   
+          "method": "GET",
+          "contentType": "application/json"   
         };
           
         $.ajax(settings).done(function (response) {  
-            let textBlock = document.getElementById("test");
-            textBlock.innerHTML = "";
+            let test = document.getElementById("test");
+            test.innerHTML = "";
             
-            var nom = "/api/v1/customers/docs";
-            $.each( response, function( i, item ){
-                console.log("Customers : "+item.nom);
+            $.each(response, function(cle,value){
+                //Recup cle + valeurs
+                console.log("JSON : "+cle+" "+value);
             });
  
         });   

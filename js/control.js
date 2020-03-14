@@ -10,11 +10,11 @@ $(document).ready(function() {
     var divnotation = "divnota0";
     var pvalvote = "pvalvote0";
     var poucevalvote = "poucevalvote0";
-
+    var tabpouceval = [];
+    
     $("#submit").click(function(){
 
-        test.getPost();
-
+        //test.getPost();
 
         //Add Div Generale
         $('<div/>', {
@@ -39,37 +39,31 @@ $(document).ready(function() {
         //Add value vote dans Div Notation
         $('<p/>', {
             id: pvalvote,
+            text: init
         }).appendTo("#"+divnotation);
     
         //Add pouce vote dans Div Notation
         $('<p/>', {
             id: poucevalvote,
             class: "col-sm-2",
-            text: "👍"
-        }).appendTo("#"+divnotation);
-       
-        console.log("val : "+pvalvote);
+            text: "👍",
+            val: 0
+        }).appendTo("#"+divnotation);        
+
+
         //Evenement de detection de click sur poucevalvote
         $("#"+poucevalvote).click(function(){
+               
+            //Recup ID
+            var valueid = (this.id);
+            valueid = valueid.substr(valueid.length-1)
 
-            console.log(this.id);
-            console.log($("#"+pvalvote));
+            //val poucevalvote++ et stockage en tab
+            tabpouceval[valueid] = this.value++;  
 
-            //MAJ val poucevalvote
-            var parent = $(this).parent();
-            parent.children("#"+pvalvote);
-            //var pval = $("#"+pvalvote);
-            //parent.find(pval);
-
-            //parent.text(init++);
-            
-            //$(".init").text(init++);
-
-        });   
-
-        console.log("val 2 : "+pvalvote);
-        //Initialisation vote a 0
-        $("#"+pvalvote).text(0);
+            //Actualisation display val
+            Majvalvote(valueid);
+        });     
 
         //Increment de l'id de div
         divinteger++;
@@ -81,6 +75,19 @@ $(document).ready(function() {
         poucevalvote = "poucevalvote"+divinteger;
     
     });
+
+    function Majvalvote(idpouce){
+
+        //Recup val en fonction de l'id
+        var valid = tabpouceval[idpouce];
+
+        //MAJ du text du pvalvote en fonction de l'id de poucevalvote
+        $("#"+pvalvote.substr(0, pvalvote.length-1)+idpouce).text(valid);
+
+
+    }
+  
+
 });
 
 
